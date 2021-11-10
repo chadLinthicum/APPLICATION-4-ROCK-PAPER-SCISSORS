@@ -1,37 +1,34 @@
-/*Simple Battle Ship*/
+/* Rock, Paper, Scissors */
 
 var computerGuess = Math.floor(Math.random() * 3);
 var rock = 0;
 var paper = 1;
 var scissors = 2;
 var guess; //undefined until user makes a guess// 
-// var hits = 0;
-// var guesses = 0;
 var wins = 0;
 var losses = 0;
 var gameOver = false;
 
-
+////
 console.log(computerGuess);
 while (gameOver == false) {
   guess = prompt("Choose your weapon! (R, P, S)");
   if (guess != "R" && guess != "P" && guess != "S") {
     alert("Doh! That weapon is unavailable!");
-  }
-  else if (guess == "R" && computerGuess==rock) {
+  } else if (guess == "R" && computerGuess==rock) {
     alert("Tie!");
     gameOver = true;
   } else if (guess == "R" && computerGuess==paper) {
     alert("Lose");
     gameOver = true;
     losses = losses + 1;
+    console.log("Losses: " + losses);
   } else if (guess == "R" && computerGuess==scissors) {
     alert("Win")
     gameOver = true;
     win = wins + 1;
-    console.log("Wins:" + win);
-  }
-  else if (guess == "P" && computerGuess==rock) {
+    console.log("Wins: " + win);
+  } else if (guess == "P" && computerGuess==rock) {
     alert("Win!");
     gameOver = true;
     win = wins + 1;
@@ -43,21 +40,25 @@ while (gameOver == false) {
     alert("Lose!")
     gameOver = true;
     losses = losses + 1;
-  }
-  else if (guess == "S" && computerGuess==rock) {
+    console.log("Losses: " + losses);
+  } else if (guess == "S" && computerGuess==rock) {
     alert("Lose!");
     gameOver = true;
     losses = losses + 1;
+    console.log("Losses: " + losses);
   } else if (guess == "S" && computerGuess==paper) {
     alert("Win");
     gameOver = true;
     win = wins + 1;
-    console.log("Wins:" + win);
+    console.log("Wins: " + win);
   } else if (guess == "S" && computerGuess==scissors) {
     alert("Tie")
     gameOver = true;
   }
 }
+
+
+
 
 
 
