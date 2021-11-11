@@ -9,91 +9,131 @@ var wins = 0;
 var losses = 0;
 var gameOver = false;
 
-////
-console.log(computerGuess);
-while (gameOver == false) {
-  guess = prompt("Choose your weapon! (R, P, S)");
-  if (guess != "R" && guess != "P" && guess != "S") {
-    alert("Doh! That weapon is unavailable!");
-  } else if (guess == "R" && computerGuess==rock) {
-    alert("Tie!");
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+
+rockButton.addEventListener("click", event => {
+  event.preventDefault();
+  // const stats = document.getElementById('stats');
+  // const ulSpan = document.createElement('span');
+
+  var node = document.createElement('li')
+  count = 1;
+  var turn = document.createTextNode(count);
+   
+
+
+  rockGuess = rockButton.innerText;
+  if (rockGuess == "R" && computerGuess==rock) {
+    console.log("Tie!");
+    node.appendChild(turn);
+    document.getElementById("ties").appendChild(node);
     gameOver = true;
-  } else if (guess == "R" && computerGuess==paper) {
-    alert("Lose");
+  } else if (rockGuess == "R" && computerGuess==paper) {
+    console.log("Lose");
     gameOver = true;
+    node.appendChild(turn);
+    document.getElementById("losses").appendChild(node);
     losses = losses + 1;
     console.log("Losses: " + losses);
-  } else if (guess == "R" && computerGuess==scissors) {
-    alert("Win")
+  } else if (rockGuess == "R" && computerGuess==scissors) {
+    console.log("Win");
+    node.appendChild(turn);
+    document.getElementById("wins").appendChild(node);
     gameOver = true;
     win = wins + 1;
     console.log("Wins: " + win);
-  } else if (guess == "P" && computerGuess==rock) {
-    alert("Win!");
-    gameOver = true;
-    win = wins + 1;
-    console.log("Wins: " + win);
-  } else if (guess == "P" && computerGuess==paper) {
-    alert("Tie");
-    gameOver = true;
-  } else if (guess == "P" && computerGuess==scissors) {
-    alert("Lose!")
-    gameOver = true;
-    losses = losses + 1;
-    console.log("Losses: " + losses);
-  } else if (guess == "S" && computerGuess==rock) {
-    alert("Lose!");
-    gameOver = true;
-    losses = losses + 1;
-    console.log("Losses: " + losses);
-  } else if (guess == "S" && computerGuess==paper) {
-    alert("Win");
-    gameOver = true;
-    win = wins + 1;
-    console.log("Wins: " + win);
-  } else if (guess == "S" && computerGuess==scissors) {
-    alert("Tie")
-    gameOver = true;
   }
-}
+})
 
 
 
-
-
-
-
-
-//   if (guess < 0 || guess > 6) { //check the user's guess 
-//     alert("Please enter a valid cell number!");
-//   } else {
-
-//     guesses = guesses + 1; //first thing that else does
-
-//     if (guess == location1 || guess == location2 || guess == location3) { //2nd thing else does
-//       alert("HIT!");
-//       hits = hits + 1;
-
-//       //silly Chad test
-//       if ( hits == 1 && guesses == 2 || guesses == 3 ) {
-//         alert ("premature!");
-//       }
-      
-
-//       if (hits == 3) { //second thing the previous if does
-//         isSunk = true;
-//         alert("You sank muh battleship!");
-//       }
-//     } else {
-//       alert("MISS!");
-//     }
-
+// //
+// console.log(computerGuess);
+// while (gameOver == false) {
+// guess = prompt("Choose your weapon! (R, P, S)");
+//   if (guess != "R" && guess != "P" && guess != "S") {
+//     alert("Doh! That weapon is unavailable!");
+//   } else if (guess == "R" && computerGuess==rock) {
+//     alert("Tie!");
+//     gameOver = true;
+//   } else if (guess == "R" && computerGuess==paper) {
+//     alert("Lose");
+//     gameOver = true;
+//     losses = losses + 1;
+//     console.log("Losses: " + losses);
+//   } else if (guess == "R" && computerGuess==scissors) {
+//     alert("Win")
+//     gameOver = true;
+//     win = wins + 1;
+//     console.log("Wins: " + win);
+//   } else if (guess == "P" && computerGuess==rock) {
+//     alert("Win!");
+//     gameOver = true;
+//     win = wins + 1;
+//     console.log("Wins: " + win);
+//   } else if (guess == "P" && computerGuess==paper) {
+//     alert("Tie");
+//     gameOver = true;
+//   } else if (guess == "P" && computerGuess==scissors) {
+//     alert("Lose!")
+//     gameOver = true;
+//     losses = losses + 1;
+//     console.log("Losses: " + losses);
+//   } else if (guess == "S" && computerGuess==rock) {
+//     alert("Lose!");
+//     gameOver = true;
+//     losses = losses + 1;
+//     console.log("Losses: " + losses);
+//   } else if (guess == "S" && computerGuess==paper) {
+//     alert("Win");
+//     gameOver = true;
+//     win = wins + 1;
+//     console.log("Wins: " + win);
+//   } else if (guess == "S" && computerGuess==scissors) {
+//     alert("Tie")
+//     gameOver = true;
 //   }
 // }
 
-// console.log(document.title);
 
-// var yourStats = "You took " + guesses + " guesses to sink the battleship, " +
-//   "which means your shooting accuracy was " + (300 / guesses + "%");
-// alert(yourStats);
+
+
+
+
+
+
+// //   if (guess < 0 || guess > 6) { //check the user's guess 
+// //     alert("Please enter a valid cell number!");
+// //   } else {
+
+// //     guesses = guesses + 1; //first thing that else does
+
+// //     if (guess == location1 || guess == location2 || guess == location3) { //2nd thing else does
+// //       alert("HIT!");
+// //       hits = hits + 1;
+
+// //       //silly Chad test
+// //       if ( hits == 1 && guesses == 2 || guesses == 3 ) {
+// //         alert ("premature!");
+// //       }
+      
+
+// //       if (hits == 3) { //second thing the previous if does
+// //         isSunk = true;
+// //         alert("You sank muh battleship!");
+// //       }
+// //     } else {
+// //       alert("MISS!");
+// //     }
+
+// //   }
+// // }
+
+// // console.log(document.title);
+
+// // var yourStats = "You took " + guesses + " guesses to sink the battleship, " +
+// //   "which means your shooting accuracy was " + (300 / guesses + "%");
+// // alert(yourStats);
 
