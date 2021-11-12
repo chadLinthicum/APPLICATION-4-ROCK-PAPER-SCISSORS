@@ -1,139 +1,69 @@
-/* Rock, Paper, Scissors */
+const rock = 0;
+const paper = 1;
+const scissors = 2;
+let computerChoice = Math.floor(Math.random() * 3);
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
-var computerGuess = Math.floor(Math.random() * 3);
-var rock = 0;
-var paper = 1;
-var scissors = 2;
-var guess; //undefined until user makes a guess// 
-var wins = 0;
-var losses = 0;
-var gameOver = false;
-
-const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
 
-rockButton.addEventListener("click", event => {
-  event.preventDefault();
-  // const stats = document.getElementById('stats');
-  // const ulSpan = document.createElement('span');
-
-  var node = document.createElement('li')
-  count = 1;
-  var turn = document.createTextNode(count);
-   
-
-
-  rockGuess = rockButton.innerText;
-  if (rockGuess == "R" && computerGuess==rock) {
-    console.log("Tie!");
-    node.appendChild(turn);
-    document.getElementById("ties").appendChild(node);
-    gameOver = true;
-  } else if (rockGuess == "R" && computerGuess==paper) {
-    console.log("Lose");
-    gameOver = true;
-    node.appendChild(turn);
-    document.getElementById("losses").appendChild(node);
-    losses = losses + 1;
-    console.log("Losses: " + losses);
-  } else if (rockGuess == "R" && computerGuess==scissors) {
-    console.log("Win");
-    node.appendChild(turn);
-    document.getElementById("wins").appendChild(node);
-    gameOver = true;
-    win = wins + 1;
-    console.log("Wins: " + win);
+function chooseRock() {
+  if (computerChoice==scissors) {
+    wins++;
+    document.getElementById('wins').innerText = "Wins: " + wins;
+    document.getElementById('userChoice').innerText = "You chose rock";
+    document.getElementById('computerChoice').innerText = "Computer chose scissors";
+  } else if (computerChoice==paper) {
+    losses++;
+    document.getElementById('losses').innerText = "Losses: " + losses;
+    document.getElementById('userChoice').innerText = "You chose rock";
+    document.getElementById('computerChoice').innerText = "Computer chose paper";
+  } else if (computerChoice==rock) {
+    ties++;
+    document.getElementById('ties').innerText = "Ties: " + ties;
+    document.getElementById('userChoice').innerText = "You chose rock";
+    document.getElementById('computerChoice').innerText = "Computer chose rock as well...";
   }
-})
+}
 
+function choosePaper() {
+  if (computerChoice==rock) {
+    wins++;
+    document.getElementById('wins').innerText = "Wins: " + wins;
+    document.getElementById('userChoice').innerText = "You chose paper";
+    document.getElementById('computerChoice').innerText = "Computer chose rock";
+  } else if (computerChoice==scissors) {
+    losses++;
+    document.getElementById('losses').innerText = "Losses: " + losses;
+    document.getElementById('userChoice').innerText = "You chose paper";
+    document.getElementById('computerChoice').innerText = "Computer chose scissors";
+  } else if (computerChoice==paper) {
+    ties++;
+    document.getElementById('ties').innerText = "Ties: " + ties;
+    document.getElementById('userChoice').innerText = "You chose paper";
+    document.getElementById('computerChoice').innerText = "Computer chose paper as well...";
+  }
+}
 
+function chooseScissors() {
+  if (computerChoice==paper) {
+    wins++;
+    document.getElementById('wins').innerText = "Wins: " + wins;
+    document.getElementById('userChoice').innerText = "You chose scissors";
+    document.getElementById('computerChoice').innerText = "Computer chose paper";
+  } else if (computerChoice==rock) {
+    losses++;
+    document.getElementById('losses').innerText = "Losses: " + losses;
+    document.getElementById('userChoice').innerText = "You chose scissors";
+    document.getElementById('computerChoice').innerText = "Computer chose rock";
+  } else if (computerChoice==scissors) {
+    ties++;
+    document.getElementById('ties').innerText = "Ties: " + ties;
+    document.getElementById('userChoice').innerText = "You chose scissors";
+    document.getElementById('computerChoice').innerText = "Computer chose scissors as well...";
+  }
+}
 
-// //
-// console.log(computerGuess);
-// while (gameOver == false) {
-// guess = prompt("Choose your weapon! (R, P, S)");
-//   if (guess != "R" && guess != "P" && guess != "S") {
-//     alert("Doh! That weapon is unavailable!");
-//   } else if (guess == "R" && computerGuess==rock) {
-//     alert("Tie!");
-//     gameOver = true;
-//   } else if (guess == "R" && computerGuess==paper) {
-//     alert("Lose");
-//     gameOver = true;
-//     losses = losses + 1;
-//     console.log("Losses: " + losses);
-//   } else if (guess == "R" && computerGuess==scissors) {
-//     alert("Win")
-//     gameOver = true;
-//     win = wins + 1;
-//     console.log("Wins: " + win);
-//   } else if (guess == "P" && computerGuess==rock) {
-//     alert("Win!");
-//     gameOver = true;
-//     win = wins + 1;
-//     console.log("Wins: " + win);
-//   } else if (guess == "P" && computerGuess==paper) {
-//     alert("Tie");
-//     gameOver = true;
-//   } else if (guess == "P" && computerGuess==scissors) {
-//     alert("Lose!")
-//     gameOver = true;
-//     losses = losses + 1;
-//     console.log("Losses: " + losses);
-//   } else if (guess == "S" && computerGuess==rock) {
-//     alert("Lose!");
-//     gameOver = true;
-//     losses = losses + 1;
-//     console.log("Losses: " + losses);
-//   } else if (guess == "S" && computerGuess==paper) {
-//     alert("Win");
-//     gameOver = true;
-//     win = wins + 1;
-//     console.log("Wins: " + win);
-//   } else if (guess == "S" && computerGuess==scissors) {
-//     alert("Tie")
-//     gameOver = true;
-//   }
-// }
-
-
-
-
-
-
-
-
-// //   if (guess < 0 || guess > 6) { //check the user's guess 
-// //     alert("Please enter a valid cell number!");
-// //   } else {
-
-// //     guesses = guesses + 1; //first thing that else does
-
-// //     if (guess == location1 || guess == location2 || guess == location3) { //2nd thing else does
-// //       alert("HIT!");
-// //       hits = hits + 1;
-
-// //       //silly Chad test
-// //       if ( hits == 1 && guesses == 2 || guesses == 3 ) {
-// //         alert ("premature!");
-// //       }
-      
-
-// //       if (hits == 3) { //second thing the previous if does
-// //         isSunk = true;
-// //         alert("You sank muh battleship!");
-// //       }
-// //     } else {
-// //       alert("MISS!");
-// //     }
-
-// //   }
-// // }
-
-// // console.log(document.title);
-
-// // var yourStats = "You took " + guesses + " guesses to sink the battleship, " +
-// //   "which means your shooting accuracy was " + (300 / guesses + "%");
-// // alert(yourStats);
 
