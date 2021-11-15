@@ -19,7 +19,7 @@ function chooseRock() {
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
       gameResult.appendChild(img);
-    }    
+    }
     
   } else if (computerChoice==paper) {
     losses++;
