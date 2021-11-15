@@ -50,6 +50,7 @@ function choosePaper() {
     if (winGIF.childNodes=img) {
       winGIF.removeChild(winGIF.lastElementChild);
       winGIF.appendChild(img);
+      img.className = "GIFs";
     }   
     
 

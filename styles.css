@@ -1,6 +1,11 @@
 body {
   text-align: center;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+}
+
+button {
+  border: none;
+  background: none;
 }
 
 img {
