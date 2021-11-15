@@ -14,7 +14,7 @@ function chooseRock() {
     document.getElementById('computerChoice').innerText = "... Computer chose scissors ...";
     
     var img = new Image();
-    img.src = "/assets/theRockSlam.gif";
+    img.src = "/assets/therockslam.gif";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -28,7 +28,7 @@ function chooseRock() {
     document.getElementById('computerChoice').innerText = "... Computer chose paper ...";
 
     var img = new Image();
-    img.src = "/assets/youLose.PNG";
+    img.src = "/assets/youlose.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -42,7 +42,7 @@ function chooseRock() {
     document.getElementById('computerChoice').innerText = "... Computer chose rock as well ...";
 
     var img = new Image();
-    img.src = "/assets/draw.PNG";
+    img.src = "/assets/draw.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -60,7 +60,7 @@ function choosePaper() {
     document.getElementById('computerChoice').innerText = "... Computer chose rock ...";
 
     var img = new Image();
-    img.src = "/assets/paperBoy.gif";
+    img.src = "/assets/paperboy.gif";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -75,7 +75,7 @@ function choosePaper() {
     document.getElementById('computerChoice').innerText = "... Computer chose scissors ...";
 
     var img = new Image();
-    img.src = "/assets/youLose.PNG";
+    img.src = "/assets/youlose.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -89,7 +89,7 @@ function choosePaper() {
     document.getElementById('computerChoice').innerText = "... Computer chose paper as well ...";
 
     var img = new Image();
-    img.src = "/assets/draw.PNG";
+    img.src = "/assets/draw.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -121,7 +121,7 @@ function chooseScissors() {
     document.getElementById('computerChoice').innerText = "... Computer chose rock ...";
 
     var img = new Image();
-    img.src = "/assets/youLose.PNG";
+    img.src = "/assets/youlose.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
@@ -135,7 +135,7 @@ function chooseScissors() {
     document.getElementById('computerChoice').innerText = "... Computer chose scissors as well ...";
 
     var img = new Image();
-    img.src = "/assets/draw.PNG";
+    img.src = "/assets/draw.png";
     var gameResult = document.getElementById("gameResult");
     if (gameResult.childNodes=img) {
       gameResult.removeChild(gameResult.lastElementChild);
