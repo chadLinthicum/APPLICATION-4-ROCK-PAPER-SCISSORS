@@ -4,7 +4,7 @@
 <br>
 <b>Description:</b> Rock, Paper, Scissors EXTREME is an EXTREME take on RPS with EXTREME graphics and animations!!<br>
 <br>
-<b>Play in your browser: </b><a href="https://chadlinthicum.github.io/GAME_RPSX/ "> Here</a><br>
+<b>Play in your browser: </b><a href="https://chadlinthicum.github.io/GAME-RPS_Extreme/"> Here</a><br>
 <br>
 <b>Download: </b><a href="https://github.com/chadLinthicum/GAME_RPSX_VanillaJS"> Here</a><br> 
 <br>
